@@ -5,6 +5,8 @@ using namespace std;
 
 #include <stack>
 #include <queue>
+#include <cmath>
+#include <cstdlib>
 #include <QLabel>
 #include <QHBoxLayout>
 #include <QGraphicsScene>
@@ -115,6 +117,7 @@ void Maze::bfsPath(){
 
 }
 
+
 void Maze::dfsPath(){
 
     resetVisited();
@@ -144,6 +147,55 @@ void Maze::dfsPath(){
                 cell->setVisited(true);
                 cell->setParent(curr);
                 stack.push(cell);
+            }
+        }
+    }
+}
+
+class Compare {
+    public:
+        bool operator() (pair<Cell*, double> p1, pair<Cell*, double> p2) {
+            return p1.second > p2.second;
+        }
+};
+
+void Maze::astarPath(){
+
+    resetVisited();
+    this->path = {};
+    priority_queue<pair<Cell*, double>, vector<pair<Cell*, double>>, Compare> pq;
+    unordered_map<Cell*, double> costs;
+
+    pq.push(make_pair(this->c_start, 0));
+    costs[this->c_start] = 0;
+    this->c_start->setParent(nullptr);
+    this->c_start->setVisited(true);
+
+    while(!pq.empty()){
+        Cell* curr = pq.top().first;
+
+        this->explored.push_back(curr);
+        double cost = pq.top().second;
+        pq.pop();
+
+        if(curr == this->c_end){
+            Cell* prev = curr->getParent();
+            while(prev->getParent() != nullptr){
+                this->path.push_back(prev);
+                prev = prev->getParent();
+            }
+            return;
+        }
+
+        for(auto cell : validNeighbors(curr)){
+            double new_cost = costs[curr] + 1;
+            if(!cell->isVisited() && (costs.find(cell) == costs.end() || new_cost < costs[cell])){
+                costs[cell] = new_cost;
+                double prio =  new_cost + (this->c_end->getRow() - cell->getRow())
+                                        + (this->c_end->getCol() - cell->getCol());
+                cell->setVisited(true);
+                cell->setParent(curr);
+                pq.push(make_pair(cell, prio));
             }
         }
     }

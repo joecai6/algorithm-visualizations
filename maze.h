@@ -11,6 +11,7 @@ using namespace std;
 #include <QPainter>
 #include <QDebug>
 #include <QMouseEvent>
+#include <unordered_map>
 
 typedef vector<vector<Cell*>> maze_map;
 
@@ -30,6 +31,8 @@ class Maze : public QWidget {
         void generateMaze();
         void bfsPath();
         void dfsPath();
+        void astarPath();
+
         vector<Cell*> validNeighbors(Cell* curr);
         vector<pair<Cell*, Cell*>> neighborCells(Cell* curr);
         bool posInMap(unsigned int row, unsigned int col);

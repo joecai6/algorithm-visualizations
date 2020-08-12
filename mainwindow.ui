@@ -44,7 +44,7 @@
     </property>
     <property name="font">
      <font>
-      <family>Bookman Old Style</family>
+      <family>Bahnschrift SemiLight</family>
       <pointsize>9</pointsize>
       <weight>50</weight>
       <bold>false</bold>
@@ -57,7 +57,7 @@
    <widget class="QSlider" name="size">
     <property name="geometry">
      <rect>
-      <x>50</x>
+      <x>40</x>
       <y>100</y>
       <width>22</width>
       <height>160</height>
@@ -78,7 +78,7 @@
     </property>
     <property name="font">
      <font>
-      <family>Bookman Old Style</family>
+      <family>Bahnschrift SemiBold</family>
       <pointsize>10</pointsize>
       <weight>75</weight>
       <bold>true</bold>
@@ -99,7 +99,7 @@
     </property>
     <property name="font">
      <font>
-      <family>Bookman Old Style</family>
+      <family>Bahnschrift SemiLight</family>
       <pointsize>9</pointsize>
      </font>
     </property>
@@ -113,11 +113,16 @@
       <string>DFS</string>
      </property>
     </item>
+    <item>
+     <property name="text">
+      <string>A* SEARCH</string>
+     </property>
+    </item>
    </widget>
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>50</x>
+      <x>40</x>
       <y>270</y>
       <width>21</width>
       <height>21</height>
@@ -136,15 +141,15 @@
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>10</x>
       <y>70</y>
-      <width>71</width>
-      <height>21</height>
+      <width>81</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <family>Bookman Old Style</family>
+      <family>Bahnschrift SemiLight</family>
       <pointsize>10</pointsize>
      </font>
     </property>

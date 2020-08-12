@@ -6,10 +6,10 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    this->setStyleSheet("background-color: aliceblue;");
-    ui->start->setStyleSheet("background-color: salmon;");
+    this->setStyleSheet("background-color: whitesmoke;");
+    ui->start->setStyleSheet("background-color: skyblue;");
     ui->reset_map->setStyleSheet("background-color: lightsteelblue;");
-    ui->selection->setStyleSheet("background-color: lightgray;");
+    ui->selection->setStyleSheet("background-color: lightsteelblue;");
 
     ui->size->setMinimum(10);
     ui->size->setMaximum(50);
@@ -50,6 +50,9 @@ void MainWindow::on_start_clicked()
         }
         else if (ui->selection->currentText() == "BFS"){
             ui->mazeWidget->bfsPath();
+        }
+        else if (ui->selection->currentText() == "A* SEARCH"){
+            ui->mazeWidget->astarPath();
         }
         else {
             return;
