@@ -12,4 +12,4 @@ The maze is randomly generated using DFS by stepping 2 units every iteration and
 
 THe user can select the algorithm they want to use to solve the maze. There are four choices of pathfinding algorithms: BFS, DFS, A*, and Greedy BFS. When the user clicks "Start", the user can see the cells that are being visited. The yellow cell hopes to reach the end goal, which is represented by the green cell. When an algorithm reachs the end cell, the path will backtrack to the start to form the path.
 
-<img src="/img/bfs_ex.gif" width="500" height="500"/>
+<img src="/img/bfs_ex.gif" width="500" height="400"/>
