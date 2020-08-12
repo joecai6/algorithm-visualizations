@@ -6,7 +6,7 @@ The visualization involves randomly generating a maze to be solved with pathfind
 
 The maze is randomly generated using DFS by stepping 2 units every iteration and randomly choosing a neighbor to step to. With the interface of Qt, a slider is displayed to allow the user to adjust the map size from 20x20 to 50x50. When the user click on the "Reset Map" button, the user can see the animation of the map being generated.
 
-<img src="/img/maze_gen.gif"/>
+<img src="/img/maze_gen.gif" width="500" height="450"/>
 
 # Solving the Maze
 
